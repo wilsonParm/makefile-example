@@ -1,0 +1,25 @@
+# compile macro
+CC		= g++
+CFLAGS	= -O2 -Wall
+LDFLAGS	= -lm 
+INCLUDES=${PROJECTPATH}/include
+
+# recursive make
+.PHONY: subdirs ${SUBDIRS} cleansubdirs
+subdirs: ${SUBDIRS}
+${SUBDIRS}:
+	${MAKE} -C $@ all
+
+
+# recursive make clean
+cleansubdirs:
+	-@for dir in ${SUBDIRS}; do \
+		${MAKE} -C $$dir clean; \
+	done
+
+	
+# dependence
+%.o: %.cpp
+	${CC} ${CFLAGS} -I ${INCLUDES} -c $< -o $@
+%.o: %.cc
+	${CC} ${CFLAGS} -I ${INCLUDES} -c $< -o $@	
