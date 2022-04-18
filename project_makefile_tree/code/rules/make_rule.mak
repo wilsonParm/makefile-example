@@ -2,7 +2,7 @@
 CC		= g++
 CFLAGS	= -O2 -Wall
 LDFLAGS	= -lm 
-INCLUDES=${PROJECTPATH}/include
+INCLUDES=${MY_ROOT}/include
 
 # recursive make
 .PHONY: subdirs ${SUBDIRS} cleansubdirs

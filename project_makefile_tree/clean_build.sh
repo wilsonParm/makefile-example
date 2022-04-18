@@ -7,4 +7,4 @@ source set_path.sh
 
 cd ${MAKE_ROOT_DIR}
 
-make -f ${MAKE_ROOT_DIR}/code/makefile
+make clean -f ${MAKE_ROOT_DIR}/code/makefile

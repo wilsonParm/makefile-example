@@ -7,6 +7,6 @@ all:subdirs ${OBJECTS}
 
 	
 clean:cleansubdirs
-	rm -f out/${OBJECTS}
+	${BUILD_CLEAN_SELECT}
 	
-include ${MAKEINCLUDE}
+include ${MAKE_RULES}
